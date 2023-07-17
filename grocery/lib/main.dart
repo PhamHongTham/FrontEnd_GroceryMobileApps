@@ -1,14 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery/pages/pagecategory.dart';
 import 'package:grocery/pages/pagehom.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,13 +17,14 @@ class MyApp extends StatelessWidget {
       title: 'Find the right one for a healthy body',
       home: SafeArea(
         child: Scaffold(
+          //backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          appBar: AppBar(
+            elevation: 0,
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-            appBar: AppBar(
-              elevation: 0,
-              backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-              shadowColor: null,
-            ),
-            body: HomePage()),
+            shadowColor: null,
+          ),
+          body: CategoryPage(),
+        ),
       ),
       debugShowCheckedModeBanner: false,
     );
